@@ -1,0 +1,24 @@
+# --- Data: never commit the dataset (it's ~19 MB and has a license of its own) ---
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Models / large outputs ---
+models/
+*.pkl
+*.joblib
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+.DS_Store
