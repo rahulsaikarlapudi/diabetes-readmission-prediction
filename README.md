@@ -22,3 +22,30 @@ The project utilizes the **Diabetes 130-US Hospitals Dataset (1999–2008)** fro
 The prediction task is framed as a classification problem using the modified readmission status:
 * `1`: Patient was readmitted within 30 days.
 * `0`: Patient was not readmitted, or readmitted after 30 days.
+
+## Repository Structure
+```
+├── data/
+│   ├── raw/            # Original CSVs from UCI (git-ignored, never edit these)
+│   └── processed/      # Cleaned data you generate (git-ignored)
+├── notebooks/
+│   └── 01_data_exploration.ipynb
+├── reports/
+│   └── figures/        # Plots saved for the final report
+├── src/
+│   ├── __init__.py
+│   └── data_loader.py  # load_raw_data(), load_id_mappings(), add_target()
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+## Setup
+1. Download the dataset from [UCI](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008) and put `diabetic_data.csv` and `IDS_mapping.csv` in `data/raw/`.
+2. Create an environment and install dependencies:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+3. Open `notebooks/01_data_exploration.ipynb` and select the `.venv` kernel.
