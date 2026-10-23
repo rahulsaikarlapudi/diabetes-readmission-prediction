@@ -1,7 +1,8 @@
-# --- Data: never commit the dataset (it's ~19 MB and has a license of its own) ---
+# --- Data ---
 data/raw/*
 data/processed/*
 !data/**/.gitkeep
+!data/processed/*.parquet
 
 # --- Python ---
 __pycache__/
