@@ -1,0 +1,10 @@
+{
+  "model": "preprocessor + StandardScaler + LogisticRegression(balanced)",
+  "n_features": 138,
+  "cv_roc_auc_mean": 0.660982331645343,
+  "cv_roc_auc_std": 0.008896238893463658,
+  "cv_pr_auc_mean": 0.21226089102806842,
+  "cv_pr_auc_std": 0.006679641156286915,
+  "test_roc_auc": 0.6700253077276469,
+  "test_pr_auc": 0.21972898958801637
+}
