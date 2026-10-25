@@ -1,10 +1,10 @@
 {
-  "model": "preprocessor + StandardScaler + LogisticRegression(balanced)",
+  "model": "preprocessor + LogisticRegression(balanced)",
   "n_features": 138,
-  "cv_roc_auc_mean": 0.660982331645343,
-  "cv_roc_auc_std": 0.008896238893463658,
-  "cv_pr_auc_mean": 0.21226089102806842,
-  "cv_pr_auc_std": 0.006679641156286915,
-  "test_roc_auc": 0.6700253077276469,
-  "test_pr_auc": 0.21972898958801637
+  "cv_roc_auc_mean": 0.6610234167072635,
+  "cv_roc_auc_std": 0.008947973221969672,
+  "cv_pr_auc_mean": 0.2122611181170912,
+  "cv_pr_auc_std": 0.006719899070272733,
+  "test_roc_auc": 0.6700396111820472,
+  "test_pr_auc": 0.21966021213203027
 }

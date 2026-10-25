@@ -1,12 +1,15 @@
 import pandas as pd
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import FunctionTransformer, OneHotEncoder
+from sklearn.preprocessing import FunctionTransformer, OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 glu_map = {"None": 0, "Norm": 1, ">200": 2, ">300": 3}   
 a1c_map = {"None": 0, "Norm": 1, ">7": 2, ">8": 3}       
 
 onehot_cols = ["race", "payer_code", "medical_specialty", "diag_1", "diag_2", "diag_3",
                "admission_type_id", "discharge_disposition_id", "admission_source_id"]
+
+numeric_cols = ["time_in_hospital", "num_lab_procedures", "num_procedures", "num_medications", "number_outpatient", "number_emergency", "number_inpatient", "number_diagnoses"]
+
 def encode_labs(df):
     df = df.copy()                                       
     df["max_glu_serum"] = df["max_glu_serum"].map(glu_map)   # replace each string by its number
@@ -55,12 +58,12 @@ def build_preprocessor():
         ("meds",  FunctionTransformer(encode_meds)),
         ("diags", FunctionTransformer(group_diagnoses)),
     ])
-    onehot =ColumnTransformer(
+    encode =ColumnTransformer(
         transformers =[("onehot",OneHotEncoder(min_frequency=100, handle_unknown="infrequent_if_exist",sparse_output=False),
-                        onehot_cols)],
+                        onehot_cols),("scale", StandardScaler(), numeric_cols)],
                         remainder="passthrough",
                         verbose_feature_names_out=False,
     )
-    pre = Pipeline([("prep",prep),("onehot",onehot)])
+    pre = Pipeline([("prep",prep),("encode", encode)])
     pre.set_output(transform="pandas")
     return pre
