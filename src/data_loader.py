@@ -2,7 +2,7 @@
 
 Usage (from a notebook in notebooks/):
     import sys; sys.path.append("..")
-    from src.data_loader import load_raw_data, load_id_mappings, add_target
+    from src.data_loader import load_raw_data, load_id_mappings
 """
 
 from pathlib import Path
@@ -48,9 +48,3 @@ def load_id_mappings(path: Path = RAW_DIR / "IDS_mapping.csv") -> dict[str, pd.D
 
     return tables
 
-
-def add_target(df: pd.DataFrame) -> pd.DataFrame:
-    """Add the binary target: 1 if readmitted within 30 days ('<30'), else 0."""
-    df = df.copy()
-    df["readmitted_30"] = (df["readmitted"] == "<30").astype(int)
-    return df
