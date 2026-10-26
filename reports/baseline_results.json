@@ -1,10 +1,8 @@
 {
   "model": "preprocessor + LogisticRegression(balanced)",
+  "evaluation": "5-fold StratifiedGroupKFold on train; holdout test not used",
   "n_features": 138,
-  "cv_roc_auc_mean": 0.6610234167072635,
-  "cv_roc_auc_std": 0.008947973221969672,
+  "positive_rate": 0.1137000272937526,
   "cv_pr_auc_mean": 0.2122611181170912,
-  "cv_pr_auc_std": 0.006719899070272733,
-  "test_roc_auc": 0.6700396111820472,
-  "test_pr_auc": 0.21966021213203027
+  "cv_pr_auc_std": 0.006719899070272733
 }

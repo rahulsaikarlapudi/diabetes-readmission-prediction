@@ -1,64 +1,14 @@
 {
-  "k95": 114,
-  "variance_kept": 0.9541313391531493,
-  "test_roc_auc": 0.6700507634066502,
-  "test_pr_auc": 0.2187509175513777,
-  "sweep": [
-    {
-      "k": 5,
-      "cv_roc_auc": 0.5746,
-      "roc_std": 0.0079,
-      "cv_pr_auc": 0.1381,
-      "variance_kept": 0.109
-    },
-    {
-      "k": 10,
-      "cv_roc_auc": 0.5975,
-      "roc_std": 0.0107,
-      "cv_pr_auc": 0.148,
-      "variance_kept": 0.179
-    },
-    {
-      "k": 20,
-      "cv_roc_auc": 0.617,
-      "roc_std": 0.0109,
-      "cv_pr_auc": 0.1703,
-      "variance_kept": 0.286
-    },
-    {
-      "k": 40,
-      "cv_roc_auc": 0.6407,
-      "roc_std": 0.0084,
-      "cv_pr_auc": 0.19,
-      "variance_kept": 0.452
-    },
-    {
-      "k": 60,
-      "cv_roc_auc": 0.6463,
-      "roc_std": 0.0091,
-      "cv_pr_auc": 0.196,
-      "variance_kept": 0.602
-    },
-    {
-      "k": 80,
-      "cv_roc_auc": 0.6503,
-      "roc_std": 0.0099,
-      "cv_pr_auc": 0.1998,
-      "variance_kept": 0.745
-    },
-    {
-      "k": 114,
-      "cv_roc_auc": 0.6602,
-      "roc_std": 0.0081,
-      "cv_pr_auc": 0.211,
-      "variance_kept": 0.954
-    },
-    {
-      "k": 138,
-      "cv_roc_auc": 0.6609,
-      "roc_std": 0.0088,
-      "cv_pr_auc": 0.2122,
-      "variance_kept": 1.0
-    }
-  ]
+  "model": "preprocessor + PCA(k95) + LogisticRegression(balanced)",
+  "evaluation": "5-fold StratifiedGroupKFold on train; holdout test not used",
+  "n_components": 51,
+  "fold_pr_auc": [
+    0.2002,
+    0.2014,
+    0.2034,
+    0.2084,
+    0.1945
+  ],
+  "cv_pr_auc_mean": 0.2015788097390187,
+  "cv_pr_auc_std": 0.004508184507346367
 }
