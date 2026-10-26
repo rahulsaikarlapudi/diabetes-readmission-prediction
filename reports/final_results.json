@@ -1,0 +1,19 @@
+{
+  "model": "Random Forest",
+  "params": {
+    "model__max_features": 0.3,
+    "model__min_samples_leaf": 10
+  },
+  "threshold": 0.4855,
+  "test_rows": 29727,
+  "test_positive_rate": 0.1143,
+  "test_scores": {
+    "pr_auc": 0.2335,
+    "roc_auc": 0.6755,
+    "recall": 0.4398,
+    "precision": 0.2149,
+    "f1": 0.2887
+  },
+  "cv_pr_auc": 0.2264,
+  "top10_readmission_rate": 0.2812
+}

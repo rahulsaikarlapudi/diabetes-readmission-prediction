@@ -1,14 +1,34 @@
 {
-  "model": "preprocessor + PCA(k95) + LogisticRegression(balanced)",
-  "evaluation": "5-fold StratifiedGroupKFold on train; holdout test not used",
-  "n_components": 51,
-  "fold_pr_auc": [
-    0.2002,
-    0.2014,
-    0.2034,
-    0.2084,
-    0.1945
-  ],
-  "cv_pr_auc_mean": 0.2015788097390187,
-  "cv_pr_auc_std": 0.004508184507346367
+  "model": "PCA (95% variance) + Logistic Regression (balanced)",
+  "evaluation": "5-fold StratifiedGroupKFold on train, test not used",
+  "n_components": 105,
+  "cv_pr_auc": 0.2113,
+  "cv_pr_auc_std": 0.0076,
+  "cv_roc_auc": 0.6608,
+  "pr_auc_by_components": [
+    {
+      "components": 5,
+      "cv_pr_auc": 0.1382
+    },
+    {
+      "components": 10,
+      "cv_pr_auc": 0.1495
+    },
+    {
+      "components": 25,
+      "cv_pr_auc": 0.178
+    },
+    {
+      "components": 50,
+      "cv_pr_auc": 0.1947
+    },
+    {
+      "components": 75,
+      "cv_pr_auc": 0.2001
+    },
+    {
+      "components": 100,
+      "cv_pr_auc": 0.211
+    }
+  ]
 }
