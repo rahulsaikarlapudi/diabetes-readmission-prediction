@@ -7,10 +7,8 @@
   "cv_pr_auc": 0.2264,
   "threshold": 0.4855,
   "comparison": {
-    "Gradient Boosting": 0.2191,
     "Random Forest": 0.219,
-    "Logistic Regression": 0.2129,
-    "PCA + Logistic Regression": 0.2113
+    "Gradient Boosting": 0.2191
   },
   "tuned_random_forest": 0.2264,
   "tuned_gradient_boosting": 0.2228

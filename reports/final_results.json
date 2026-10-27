@@ -9,7 +9,6 @@
   "test_positive_rate": 0.1143,
   "test_scores": {
     "pr_auc": 0.2335,
-    "roc_auc": 0.6755,
     "recall": 0.4398,
     "precision": 0.2149,
     "f1": 0.2887
