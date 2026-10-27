@@ -27,18 +27,33 @@ The prediction task is framed as a classification problem using the modified rea
 ```
 ├── data/
 │   ├── raw/            # Original CSVs from UCI (git-ignored, never edit these)
-│   └── processed/      # Cleaned data you generate (git-ignored)
+│   └── processed/      # Train/test Parquet files from notebook 02
 ├── notebooks/
-│   └── 01_data_exploration.ipynb
-├── reports/
-│   └── figures/        # Plots saved for the final report
+│   ├── 01_eda.ipynb
+│   ├── 02_data_imputation.ipynb
+│   ├── 03_preprocessing.ipynb
+│   ├── 04_baseline_model.ipynb
+│   ├── 05_pca.ipynb
+│   ├── 06_model_selection.ipynb
+│   └── 07_model_evaluation.ipynb
+├── models/             # Final model from notebook 06 (git-ignored)
+├── reports/            # Results JSON per stage
 ├── src/
 │   ├── __init__.py
-│   └── data_loader.py  # load_raw_data(), load_id_mappings(), add_target()
+│   ├── data_loader.py      # load_raw_data(), load_id_mappings()
+│   └── preprocessing.py    # encoding functions and build_preprocessor()
 ├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
+
+## Results
+| Model | CV PR-AUC | Test PR-AUC |
+|---|---|---|
+| Random model | 0.114 | 0.114 |
+| Logistic Regression (baseline) | 0.213 | - |
+| PCA + Logistic Regression | 0.211 | - |
+| Random Forest (tuned, final) | 0.226 | 0.234 |
 
 ## Setup
 1. Download the dataset from [UCI](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008) and put `diabetic_data.csv` and `IDS_mapping.csv` in `data/raw/`.
@@ -48,4 +63,4 @@ The prediction task is framed as a classification problem using the modified rea
    source .venv/bin/activate
    pip install -r requirements.txt
    ```
-3. Open `notebooks/01_data_exploration.ipynb` and select the `.venv` kernel.
+3. Run the notebooks in order from `01_eda.ipynb` to `07_model_evaluation.ipynb` with the `.venv` kernel.

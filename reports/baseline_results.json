@@ -1,0 +1,11 @@
+{
+  "model": "Logistic Regression (balanced)",
+  "evaluation": "5-fold StratifiedGroupKFold on train, test not used",
+  "n_features": 128,
+  "positive_rate": 0.1137,
+  "cv_pr_auc": 0.2129,
+  "cv_pr_auc_std": 0.0078,
+  "cv_roc_auc": 0.662,
+  "cv_recall": 0.5467,
+  "cv_precision": 0.1824
+}
