@@ -66,7 +66,7 @@ def group_diagnoses(df):
 
 
 # text -> numbers, then one-hot the categories and scale the numbers
-def build_preprocessor():
+def build_preprocessor(extra_cols=None):
     prep = Pipeline([
         ("labs", FunctionTransformer(encode_labs)),
         ("meds", FunctionTransformer(encode_meds)),
@@ -75,7 +75,7 @@ def build_preprocessor():
     encode = ColumnTransformer(
         transformers=[
             ("onehot", OneHotEncoder(min_frequency=100, handle_unknown="infrequent_if_exist", sparse_output=False), onehot_cols),
-            ("scale", StandardScaler(), numeric_cols + ordinal_cols),
+            ("scale", StandardScaler(), numeric_cols + ordinal_cols + (extra_cols or [])),
             ("binary", "passthrough", binary_cols),
         ],
         remainder="drop",

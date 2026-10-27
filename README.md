@@ -53,6 +53,8 @@ The prediction task is framed as a classification problem using the modified rea
 | Random model | 0.114 | 0.114 |
 | Logistic Regression (baseline) | 0.213 | - |
 | PCA + Logistic Regression | 0.211 | - |
+| XGBoost (tuned) | 0.224 | - |
+| Ensemble RF + XGBoost + LR | 0.227 | - |
 | Random Forest (tuned, final) | 0.226 | 0.234 |
 
 ## Setup
@@ -63,4 +65,5 @@ The prediction task is framed as a classification problem using the modified rea
    source .venv/bin/activate
    pip install -r requirements.txt
    ```
+   On macOS, XGBoost also needs OpenMP: `brew install libomp`.
 3. Run the notebooks in order from `01_eda.ipynb` to `07_model_evaluation.ipynb` with the `.venv` kernel.
