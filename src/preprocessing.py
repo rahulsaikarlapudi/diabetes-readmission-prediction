@@ -11,7 +11,7 @@ med_cols = ["metformin", "repaglinide", "nateglinide", "chlorpropamide", "glimep
             "troglitazone", "tolazamide", "insulin", "glyburide-metformin", "glipizide-metformin",
             "glimepiride-pioglitazone", "metformin-rosiglitazone", "metformin-pioglitazone"]
 
-# medicines given to fewer than 100 patients in train
+# medicines given in fewer than 100 train visits
 rare_med_cols = ["glimepiride-pioglitazone", "metformin-pioglitazone", "acetohexamide", "metformin-rosiglitazone",
                  "troglitazone", "glipizide-metformin", "tolbutamide", "miglitol", "tolazamide", "chlorpropamide"]
 

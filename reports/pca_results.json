@@ -4,7 +4,6 @@
   "n_components": 105,
   "cv_pr_auc": 0.2113,
   "cv_pr_auc_std": 0.0076,
-  "cv_roc_auc": 0.6608,
   "pr_auc_by_components": [
     {
       "components": 5,
