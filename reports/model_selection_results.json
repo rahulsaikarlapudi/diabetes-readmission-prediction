@@ -8,8 +8,13 @@
   "threshold": 0.4855,
   "comparison": {
     "Random Forest": 0.219,
-    "Gradient Boosting": 0.2191
+    "Extra Trees": 0.2171,
+    "XGBoost": 0.2029,
+    "KNN": 0.1749,
+    "Decision Tree": 0.1643
   },
   "tuned_random_forest": 0.2264,
-  "tuned_gradient_boosting": 0.2228
+  "tuned_xgboost": 0.2239,
+  "ensemble": 0.2271,
+  "new_features": 0.2253
 }
